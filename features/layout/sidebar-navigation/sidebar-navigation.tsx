@@ -20,6 +20,7 @@ export function SidebarNavigation() {
   const router = useRouter();
   const { isSidebarCollapsed, toggleSidebar } = useContext(NavigationContext);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div
       className={classNames(
@@ -34,16 +35,22 @@ export function SidebarNavigation() {
         )}
       >
         <header className={styles.header}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={
-              isSidebarCollapsed
-                ? "/icons/logo-small.svg"
-                : "/icons/logo-large.svg"
-            }
-            alt="logo"
-            className={styles.logo}
-          />
+          <picture>
+            <source
+              media={`(max-width: 64rem)`}
+              srcSet="/icons/logo-large.svg"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={
+                isSidebarCollapsed
+                  ? "/icons/logo-small.svg"
+                  : "/icons/logo-large.svg"
+              }
+              alt="logo"
+              className={styles.logo}
+            />
+          </picture>
           <Button
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className={styles.menuButton}
