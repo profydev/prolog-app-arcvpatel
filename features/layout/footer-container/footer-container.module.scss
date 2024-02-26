@@ -1,0 +1,66 @@
+@use "@styles/space";
+@use "@styles/font";
+@use "@styles/color";
+@use "@styles/breakpoint";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font: font.$text-xs-regular;
+  background-color: color.$gray-50;
+  height: 11.063 rem;
+  padding: space.$s6;
+
+  @media (min-width: breakpoint.$desktop) {
+    flex-direction: row;
+    padding: 0 space.$s6;
+    height: space.$s15;
+    align-items: center;
+  }
+}
+
+.footerCenterItems {
+  display: flex;
+  justify-content: space-evenly;
+  gap: space.$s6;
+  text-decoration: none;
+
+  a {
+    color: color.$gray-500;
+    text-decoration: none;
+  }
+
+  @media (min-width: breakpoint.$desktop) {
+    justify-content: space-between;
+    gap: space.$s6;
+    align-items: center;
+    padding: 0 space.$s6;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: breakpoint.$desktop) {
+    display: flex;
+    justify-content: center;
+    padding: space.$s4;
+  }
+}
+
+.logo {
+  width: 2.063rem;
+  height: 1.438rem;
+}
+
+.versionContainer {
+  color: color.$gray-400;
+
+  @media (max-width: breakpoint.$desktop) {
+    display: flex;
+    order: 3;
+    justify-content: center;
+  }
+}
