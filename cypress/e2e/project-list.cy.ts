@@ -19,8 +19,6 @@ describe("Project List", () => {
       cy.viewport(1025, 900);
     });
 
-    it("renders the loading icon while the projects are loading", () => {});
-
     it("renders the projects", () => {
       const languageNames = ["React", "Node.js", "Python"];
       const statusNames = ["Critical", "Warning", "Stable"];
